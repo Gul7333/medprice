@@ -24,7 +24,7 @@ type Medicine = {
 export default async function CompanyPage({
   params,
 }: {
-  params: { companyname: string };
+  params: Promise<{ companyname: string }>;
 }) {
   const companyParam = decodeURIComponent(
     (await params).companyname

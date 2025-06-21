@@ -21,7 +21,7 @@ type Medicine = {
 export default async function Page({
   params,
 }: {
-  params: { brandname: string };
+  params: Promise<{ brandname: string }>;
 }) {
   const brand = decodeURIComponent((await params).brandname).toLowerCase();
 
