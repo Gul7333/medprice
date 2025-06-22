@@ -3,7 +3,7 @@ import MedicineArticle from "@/components/MedicineArticle";
 const data: Medicine[] = require("@/db/result.json");
 
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return data.map((item) => ({
     brandname: item.CompanyName,
   }));
