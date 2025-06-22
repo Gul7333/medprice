@@ -12,8 +12,8 @@ type Medicine = {
   RegNoChar: string;
 };
 
-export default function BrandPage({ params }: { params: { brandname: string } }) {
-  const brand = decodeURIComponent(params.brandname).toLowerCase();
+export default async function BrandPage({ params }: { params: Promise<{ brandname: string }> }) {
+  const brand = decodeURIComponent((await params).brandname).toLowerCase();
 
   const results: Medicine[] = data.filter((item: Medicine) =>
     item.BrandName.toLowerCase().includes(brand)
@@ -23,7 +23,7 @@ export default function BrandPage({ params }: { params: { brandname: string } })
 
   return (
     <main className="max-w-3xl mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Results for: {params.brandname}</h1>
+      <h1 className="text-2xl font-bold mb-4">Results for: {brand}</h1>
       {results.map((item) => (
         <MedicineArticle key={item.Id} medicine={item} />
       ))}
