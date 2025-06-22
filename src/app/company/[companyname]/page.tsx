@@ -3,13 +3,6 @@ import MedicineArticle from "@/components/MedicineArticle";
 const data: Medicine[] = require("@/db/result.json");
 
 
-export async function generateStaticParams() {
-  return data.map((item) => ({
-    brandname: item.CompanyName,
-  }));
-}
-
-
 
 type Medicine = {
   BrandName: string;
@@ -60,4 +53,14 @@ export default async function CompanyPage({
       </section>
     </main>
   );
+}
+
+export async function generateStaticParams() {
+  const uniqueCompanies = Array.from(
+    new Set(data.map((item) => item.CompanyName))
+  );
+
+  return uniqueCompanies.map((company) => ({
+    companyname: company, // ✅ match [companyname] in your route
+  }));
 }
