@@ -66,7 +66,7 @@ export default function SearchSuggestions() {
         placeholder="Search medicine..."
         className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:ring-blue-200"
       />
-<div className="flex justify-around">
+<div className="flex justify-self-center gap-2">
 
       <label htmlFor="brand">Brand</label>
       <input type="radio" id="brand"    value={"brand"}   name="mode" onChange={handleChangemode} />
@@ -74,9 +74,6 @@ export default function SearchSuggestions() {
       <input type="radio" id="company"  value={"company"} name="mode" onChange={handleChangemode} />
 </div>
 
-       <p>
-        {modeofsearch}
-      </p>
 
       {suggestions.length > 0 && (
         <ul className="text-black absolute left-0 right-0 bg-white border border-gray-200 mt-1 rounded-md shadow z-10 max-h-60 overflow-y-auto">

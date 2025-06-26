@@ -19,13 +19,15 @@ export default function BrandnameRootPage() {
 
   return (
     <main className="max-w-3xl mx-auto p-4" role="main">
-      <h1 className="text-3xl font-bold mb-4">Complete List of Medicines made in Pakistan | medprice.pk</h1>
-      <p>Find all medicine by name , brandname ,or company name made in pakistan</p>
+      <h1 className="text-3xl font-bold mb-4">
+        Alternative of All Medicines in Pakistan | medprice.pk
+      </h1>
+      <p>Click on any brand name to find its alternative</p>
       <ul className="space-y-2">
         {uniqueBrands.map((brand) => (
           <li key={brand}>
             <a
-              href={`/brandname/${encodeURIComponent(brand)}`}
+              href={`/alternative/${encodeURIComponent(brand)}`}
               className="text-blue-600 hover:underline"
             >
               {brand}
@@ -37,11 +39,13 @@ export default function BrandnameRootPage() {
   );
 }
 
-export const metadata : Metadata = {
-  title : "Complete List of medicines made in pakistan | Find all Medicines made in pakistan | medprice.pk",
-  description : "Here is Complete List of medicines made in pakistan | Find Medicines made in pakistan | medprice.pk",
+export const metadata: Metadata = {
+  title:
+    "Alternative of medicines made in pakistan | Find alternative of Medicines made in pakistan | medprice.pk",
+  description:
+    "Here is Complete List of medicines made in pakistan | Find alternatives of Medicines made in pakistan | medprice.pk",
   alternates: {
-    canonical: "https://medprice.pk/brandname"
+    canonical: "https://medprice.pk/alternative",
   },
   creator: "Medprice.pk",
-}
+};

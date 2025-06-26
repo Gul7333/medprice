@@ -65,6 +65,8 @@ export default function MedicineArticle({ medicine }: { medicine: Medicine }) {
         {[
           `${medicine.BrandName} price in Pakistan`,
           `${medicine.BrandName} tablet price`,
+          `${medicine.BrandName} Capsule price`,
+          `${medicine.CompanyName} ${medicine.BrandName} price`,
           `Buy ${medicine.BrandName} online`,
           `${medicine.BrandName} ${
             medicine.Formulation.toLowerCase().replace(/[^\w\s]/gi, "").split(" ").find((w) => w.match(/\d+mg/)) || ""
