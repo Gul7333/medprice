@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${decodedBrand} Alternatives | Alternative of ${decodedBrand} in pakistan | medprice.pk`,
     creator: "Medprice.pk",
     alternates: {
-      canonical: `${baseUrl}/alternative/${(await params).brandname}`,
+    //   canonical: `${baseUrl}/alternative/${(await params).brandname}`,
     },
   };
 }
