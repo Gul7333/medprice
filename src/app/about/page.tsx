@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 export default function AboutPage() {
     return (
       <main className="max-w-3xl mx-auto p-4" role="main">
@@ -25,3 +27,12 @@ export default function AboutPage() {
     );
   }
   
+  export const metadata: Metadata = {
+  title: "About Medprice.pk | medprice.pk",
+  description:
+    "Medprice.pk is hub for finding latest accurate prices of medicine in pakistan| medprice.pk",
+  alternates: {
+    canonical: "https://medprice.pk/about",
+  },
+  creator: "Medprice.pk",
+};

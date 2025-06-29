@@ -11,7 +11,7 @@ type Props = {
 };
 export function generateStaticParams() {
   return data.map((item) => ({
-    brandname: encodeURIComponent(item.BrandName),
+    brandname: item.BrandName,
   }));
 }
 // Optional: to support static generation

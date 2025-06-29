@@ -41,7 +41,7 @@ export default function BrandnameRootPage() {
 
 export const metadata: Metadata = {
   title:
-    "Alternative of medicines made in pakistan | Find alternative of Medicines made in pakistan | medprice.pk",
+    "Alternative Brands | Find alternative brand of Medicines made in pakistan | medprice.pk",
   description:
     "Here is Complete List of medicines made in pakistan | Find alternatives of Medicines made in pakistan | medprice.pk",
   alternates: {

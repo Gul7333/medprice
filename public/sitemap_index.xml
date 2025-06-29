@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+      <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      <sitemap>
+        <loc>https://medprice.pk/sitemap.xml</loc>
+      </sitemap>
+      <sitemap>
+        <loc>https://medprice.pk/brandname/sitemap.xml</loc>
+      </sitemap>
+   
+      <sitemap>
+        <loc>https://medprice.pk/alternative/sitemap.xml</loc>
+      </sitemap>
+       <sitemap>
+        <loc>https://medprice.pk/company/sitemap.xml</loc>
+      </sitemap>
+     
+      </sitemapindex>

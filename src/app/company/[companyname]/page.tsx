@@ -34,7 +34,8 @@ export default async function CompanyPage({
     <main className="max-w-5xl mx-auto p-4" role="main">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Medicines by {companyDisplayName} in Pakistan | {companyDisplayName} medicines
+          Medicines by {companyDisplayName} in Pakistan | {companyDisplayName}{" "}
+          medicines
         </h1>
         <p className="text-gray-600">
           A complete list of medicines manufactured by {companyDisplayName},
@@ -79,13 +80,13 @@ export async function generateStaticParams() {
   );
 
   return uniqueCompanies.map((company) => ({
-    companyname: encodeURIComponent(company),
+    companyname:company,
   }));
 }
 
 type Props = {
-  params: Promise<{ companyname: string }>
-}
+  params: Promise<{ companyname: string }>;
+};
 
 // Optional: to support static generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
