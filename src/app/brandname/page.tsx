@@ -1,3 +1,4 @@
+import { BASE_URL, SITE_NAME } from "@/constant/constant";
 import { Metadata } from "next";
 
 const data: Medicine[] = require("@/db/result.json");
@@ -19,7 +20,7 @@ export default function BrandnameRootPage() {
 
   return (
     <main className="max-w-3xl mx-auto p-4" role="main">
-      <h1 className="text-3xl font-bold mb-4">Complete List of Medicines made in Pakistan | medprice.pk</h1>
+      <h1 className="text-3xl font-bold mb-4">Complete List of Medicines made in Pakistan | {SITE_NAME}</h1>
       <p>Find all medicine by name , brandname ,or company name made in pakistan</p>
       <ul className="space-y-2">
         {uniqueBrands.map((brand) => (
@@ -38,10 +39,10 @@ export default function BrandnameRootPage() {
 }
 
 export const metadata : Metadata = {
-  title : "Complete List of medicines made in pakistan | Find all Medicines made in pakistan | medprice.pk",
-  description : "Here is Complete List of medicines made in pakistan | Find Medicines made in pakistan | medprice.pk",
+  title : `Complete List of medicines made in pakistan | Find all Medicines made in pakistan | ${SITE_NAME}`,
+  description : `Here is Complete List of medicines made in pakistan | Find Medicines made in pakistan | ${SITE_NAME}`,
   alternates: {
-    canonical: "https://medprice.pk/brandname"
+    canonical: `${BASE_URL}/brandname`
   },
-  creator: "Medprice.pk",
+  creator: SITE_NAME,
 }

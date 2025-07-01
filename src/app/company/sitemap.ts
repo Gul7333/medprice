@@ -1,5 +1,5 @@
+import { BASE_URL } from '@/constant/constant';
 import type { MetadataRoute } from 'next';
-const BASE_URL = "https://medprice.pk"
 const drugs: Medicine[] = require("@/db/result.json")
 
 // // Generate sitemap IDs based on total items divided into 30,000 chunks

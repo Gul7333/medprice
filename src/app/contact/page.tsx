@@ -1,3 +1,4 @@
+import { BASE_URL, SITE_NAME } from "@/constant/constant";
 import { Metadata } from "next";
 
 export default function ContactPage() {
@@ -22,11 +23,11 @@ export default function ContactPage() {
   );
 }
 export const metadata: Metadata = {
-  title: "Contact page of Medprice.pk | medprice.pk",
+  title: `Contact page of ${SITE_NAME} | ${SITE_NAME}`,
   description:
-    "Medprice.pk is hub for finding latest accurate prices of medicine in pakistan | medprice.pk",
+    `${SITE_NAME} is hub for finding latest accurate prices of medicine in pakistan`,
   alternates: {
-    canonical: "https://medprice.pk/contact",
+    canonical: `${BASE_URL}/contact`,
   },
-  creator: "Medprice.pk",
+  creator: SITE_NAME,
 };

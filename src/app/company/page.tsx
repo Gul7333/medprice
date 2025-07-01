@@ -1,3 +1,4 @@
+import { BASE_URL, SITE_NAME } from "@/constant/constant";
 import { Metadata } from "next";
 import Link from "next/link";
 const data: Medicine[] = require("@/db/result.json");
@@ -19,7 +20,7 @@ export default function CompanyRootPage() {
 
   return (
     <main className="max-w-3xl mx-auto p-4" role="main">
-      <h1 className="text-3xl font-bold mb-4">All Pharmaceutical Companies in Pakistan | medprice.pk</h1>
+      <h1 className="text-3xl font-bold mb-4">All Pharmaceutical Companies in Pakistan | {SITE_NAME}</h1>
       <p>Here is List of all pharmaceutical companies of pakistan </p>
       
       <ul className="space-y-2">
@@ -39,11 +40,11 @@ export default function CompanyRootPage() {
 }
 
 export const metadata: Metadata = {
-  title: "Complete List of pharmaceutical Companies | Find all Companies of Pakistan | medprice.pk",
+  title: `Complete List of pharmaceutical Companies | Find all Companies of Pakistan | ${SITE_NAME}`,
   description:
-    "Here is the complete list of pharmaceutical companies in Pakistan. Find medicines manufactured in Pakistan. | medprice.pk",
+    "Here is the complete list of pharmaceutical companies in Pakistan. Find medicines manufactured in Pakistan.",
   alternates: {
-    canonical: "https://medprice.pk/company",
+    canonical: `${BASE_URL}/company`,
   },
-  creator: "Medprice.pk", // optional: adds consistency
+  creator: SITE_NAME, // optional: adds consistency
 };

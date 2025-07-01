@@ -2,6 +2,7 @@
 
 // app/alternative/[brandname]/page.tsx
 
+import { BASE_URL, SITE_NAME } from "@/constant/constant";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -33,14 +34,14 @@ export async function generateStaticParams() {
 // Optional: to support static generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decodedBrand = decodeURIComponent((await params).brandname);
-  const baseUrl = "https://medprice.pk";
+  const baseUrl = BASE_URL
 
   return {
-    title: `${decodedBrand} Alternatives | Alternative of ${decodedBrand} in pakistan | medprice.pk`,
-    description: `${decodedBrand} Alternatives | Alternative of ${decodedBrand} in pakistan | medprice.pk`,
-    creator: "Medprice.pk",
+    title: `${decodedBrand} Alternatives | Alternative of ${decodedBrand} in pakistan | ${SITE_NAME}`,
+    description: `${decodedBrand} Alternatives | Alternative of ${decodedBrand} in pakistan | ${SITE_NAME}`,
+    creator: SITE_NAME,
     alternates: {
-    //   canonical: `${baseUrl}/alternative/${(await params).brandname}`,
+      canonical: `${baseUrl}/alternative/${(await params).brandname}`,
     },
   };
 }
@@ -66,12 +67,11 @@ export default async function AlternativePage({ params }: Props) {
     <main style={{ padding: "20px", fontFamily: "sans-serif" }}>
       <header>
         <h1>
-          {" "}
-          {decodedBrand} Alternative | Alternatives to {decodedBrand}{" "}
+          {decodedBrand} Alternative | Alternatives of {decodedBrand} in pakistan
         </h1>
         <p>
           Alternative of {decodedBrand} in Pakistan | Latest Price of
-          Alternative of {decodedBrand} in Pakistan | medprice.pk
+          Alternative of {decodedBrand} in Pakistan | {SITE_NAME}
         </p>
       </header>
 

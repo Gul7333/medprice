@@ -1,3 +1,4 @@
+import { BASE_URL, SITE_NAME } from "@/constant/constant";
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -34,7 +35,7 @@ export default async function CompanyPage({
     <main className="max-w-5xl mx-auto p-4" role="main">
       <header>
         <h1 className="text-3xl font-bold mb-4">
-          Medicines by {companyDisplayName} in Pakistan | {companyDisplayName}{" "}
+          Medicines by {companyDisplayName} in Pakistan | {companyDisplayName}
           medicines
         </h1>
         <p className="text-gray-600">
@@ -91,14 +92,14 @@ type Props = {
 // Optional: to support static generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decodedCompanyName = decodeURIComponent((await params).companyname);
-  const baseUrl = "https://medprice.pk";
+  
 
   return {
-    title: `${decodedCompanyName} | All Medicine manufactred by ${decodedCompanyName} in pakistan | medprice.pk`,
+    title: `${decodedCompanyName} | All Medicine manufactred by ${decodedCompanyName} in pakistan | ${SITE_NAME}`,
     description: `A complete list of medicines manufactured by ${decodedCompanyName} ,including brand names, formulations, and latest prices.`,
-    creator: "Medprice.pk",
+    creator: SITE_NAME,
     alternates: {
-      canonical: `${baseUrl}/company/${(await params).companyname}`,
+      canonical: `${BASE_URL}/company/${(await params).companyname}`,
     },
   };
 }

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata : Metadata = {
-  title: "MedPrice – Latest Medicine Prices & Information in Pakistan",
+  title: "MedPrice – Latest Medicine Prices & Information in Pakistan | Medprice.pk",
   description:
     "MedPrice helps you find accurate, up-to-date medicine prices and details in Pakistan. Browse medicines by brand or company name with ease.",
 };

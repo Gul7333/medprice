@@ -1,5 +1,5 @@
+import { BASE_URL } from '@/constant/constant'
 import type { MetadataRoute } from 'next'
- const BASE_URL = "https://medprice.pk"
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {

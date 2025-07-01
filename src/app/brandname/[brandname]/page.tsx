@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import MedicineArticle from "@/components/MedicineArticle";
 import { Metadata } from "next";
+import { BASE_URL, SITE_NAME } from "@/constant/constant";
 const data: Medicine[] = require("@/db/result.json");
 
 
@@ -17,14 +18,14 @@ export function generateStaticParams() {
 // Optional: to support static generation
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const decodedBrand = decodeURIComponent((await params).brandname);
-  const baseUrl = "https://medprice.pk";
+  
 
   return {
-    title: `${decodedBrand} price | ${decodedBrand} price in pakistan | medprice.pk`,
-    description: `${decodedBrand} Price | Latest Price of ${decodedBrand} in pakistan | medprice.pk`,
-    creator: "Medprice.pk",
+    title: `${decodedBrand} price | ${decodedBrand} price in pakistan | ${SITE_NAME}`,
+    description: `${decodedBrand} Price | Latest Price of ${decodedBrand} in pakistan | ${SITE_NAME}`,
+    creator: SITE_NAME,
     alternates: {
-      canonical: `${baseUrl}/brandname/${(await params).brandname}`,
+      canonical: `${BASE_URL}/brandname/${(await params).brandname}`,
     },
   };
 }
@@ -65,11 +66,9 @@ export default async function Page({
     <main className="max-w-3xl mx-auto p-4" role="main">
       <header>
         <h1 className="text-3xl font-bold mb-4 capitalize">
-          {brand} Price in Pakistan 
-        </h1>
+          {brand} Price in Pakistan </h1>
         <p className="text-gray-600">
-          View latest Price, manufacturer, formulation, and pack details of
-          {brand}.
+          View latest Price, manufacturer, formulation, and pack details of {brand}.
         </p>
       </header>
 
