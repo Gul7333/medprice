@@ -51,7 +51,7 @@ export default async function AlternativePage({ params }: Props) {
   const decodedBrand = decodeURIComponent((await params).brandname);
 
   const currentMedicine = data.find(
-    (item) => item.BrandName.toLowerCase() === decodedBrand.toLowerCase()
+    (item) => item.BrandName.toLowerCase().trim() === decodedBrand.toLowerCase().trim()
   );
 
   if (!currentMedicine) return notFound();
@@ -60,7 +60,7 @@ export default async function AlternativePage({ params }: Props) {
   const identifier = currentMedicine.Formulation;
 
   const alternatives = data.filter((item) =>
-    item.Formulation.toLowerCase().includes(identifier.toLowerCase())
+    item.Formulation.toLowerCase().includes(identifier.toLowerCase()) || identifier.toLocaleLowerCase().includes(item.Formulation.toLowerCase())
   );
 
   return (

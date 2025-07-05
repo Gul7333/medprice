@@ -45,10 +45,10 @@ type Medicine = {
 export default async function Page({
   params,
 }: Props) {
-  const brand = decodeURIComponent((await params).brandname).toLowerCase();
+  const brand = decodeURIComponent((await params).brandname).toLowerCase().trim();
 
   const results: Medicine[] = data.filter(
-    (item: Medicine) => item.BrandName.toLowerCase() === brand
+    (item: Medicine) => item.BrandName.toLowerCase().trim() === brand
   );
 
   if (results.length === 0) return notFound();
