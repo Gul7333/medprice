@@ -13,19 +13,19 @@ export default function MedicineArticle({ medicine }: { medicine: Medicine }) {
     <article
     itemScope
     itemType="https://schema.org/Product"
-    className="border rounded-lg shadow p-4 mb-6 bg-white"
+    className="border rounded-lg shadow p-4 mb-6 bg-white dark:bg-gray-900"
   >
     <header>
-      <h2 className="text-xl font-bold text-blue-700" itemProp="name">
+      <h2 className="text-xl font-bold text-blue-700 dark:text-blue-400 " itemProp="name">
         {medicine.BrandName} {medicine.PackSize}
       </h2>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm">
         Reg#: <span itemProp="sku">{medicine.RegNoChar}</span>
       </p>
     </header>
   
     <section aria-labelledby={`desc-${medicine.Id}`}>
-      <h3 id={`desc-${medicine.Id}`} className="sr-only">Description</h3>
+      <h3 id={`desc-${medicine.Id}`} className="sr-only">Description of {medicine.BrandName}</h3>
       <p className="text-gray-700" itemProp="description">
         {medicine.Formulation}
       </p>
@@ -51,8 +51,8 @@ export default function MedicineArticle({ medicine }: { medicine: Medicine }) {
       itemType="https://schema.org/Offer"
       aria-labelledby={`price-${medicine.Id}`}
     >
-      <h3 id={`price-${medicine.Id}`} className="sr-only">Price</h3>
-      <p className="text-lg font-semibold text-green-700">
+      <h3 id={`price-${medicine.Id}`} className="sr-only">Price of {medicine.BrandName}</h3>
+      <p className="text-lg font-semibold text-green-700 dark:text-green-400">
         Price: Rs. <span itemProp="price">{parseFloat(medicine.MRP).toFixed(2)}</span>
       </p>
       <meta itemProp="priceCurrency" content="PKR" />

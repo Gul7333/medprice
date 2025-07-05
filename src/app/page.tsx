@@ -29,28 +29,28 @@ export default function HomePage() {
           href="/about"
           className="text-blue-500 hover:underline mt-4"
         >
-          Learn more about MedPrice
+          Learn more about PakMedPrice
         </Link>
       </div>
 
       <section className="mt-10 text-left">
         <h2 className="text-2xl font-semibold mb-4">Medicine Price Lookup Made Easy</h2>
         <p className="text-gray-700 mb-4">
-          MedPrice is your trusted source for checking the latest <strong>medicine prices in Pakistan</strong>.
+          PakMedPrice is your trusted source for checking the latest <strong>medicine prices in Pakistan</strong>.
           Whether you're looking for branded medicines or generic alternatives, our platform helps you compare
           and stay informed. We list prices according to the official Maximum Retail Price (MRP) provided by
           manufacturers and regulators.
         </p>
 
         <p className="text-gray-700 mb-4">
-          With MedPrice, you can search medicines by brand name or by pharmaceutical company. This makes it easier for
+          With PakMedPrice, you can search medicines by brand name or by pharmaceutical company. This makes it easier for
           patients, doctors, and pharmacists to find the right medicine and ensure it's fairly priced.
           From antibiotics to painkillers, our database is growing with regularly updated information.
         </p>
 
         <p className="text-gray-700 mb-4">
           Our mission is to make <strong>medicine information in Pakistan</strong> more transparent and accessible.
-          No more guessing or relying on outdated labels—use MedPrice to check the correct, updated MRP and product details.
+          No more guessing or relying on outdated labels—use PakMedPrice to check the correct, updated MRP and product details.
         </p>
       </section>
     </main>

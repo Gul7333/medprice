@@ -58,7 +58,7 @@ export default function SearchSuggestions() {
   };
 
   return (
-    <div className="relative max-w-xl mx-auto mt-4">
+    <div className="relative max-w-xl mx-auto mt-4 py-2">
       <input
         type="text"
         value={query}

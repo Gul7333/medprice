@@ -66,12 +66,11 @@ export default async function AlternativePage({ params }: Props) {
   return (
     <main style={{ padding: "20px", fontFamily: "sans-serif" }}>
       <header>
-        <h1>
+        <h1 className="text-2xl mb-4">
           {decodedBrand} Alternative | Alternatives of {decodedBrand} in pakistan
         </h1>
-        <p>
-          Alternative of {decodedBrand} in Pakistan | Latest Price of
-          Alternative of {decodedBrand} in Pakistan | {SITE_NAME}
+        <p className="text-sm mb-2">
+          Alternative of {decodedBrand} in Pakistan | Find alternative Medicines of {decodedBrand} in Pakistan 
         </p>
       </header>
 

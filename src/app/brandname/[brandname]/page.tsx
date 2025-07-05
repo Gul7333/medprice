@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import MedicineArticle from "@/components/MedicineArticle";
 import { Metadata } from "next";
 import { BASE_URL, SITE_NAME } from "@/constant/constant";
+import Link from "next/link";
 const data: Medicine[] = require("@/db/result.json");
 
 
@@ -53,8 +54,9 @@ export default async function Page({
   if (results.length === 0) return notFound();
 
   // Get first result's index in full data list to find next medicines
+  const lastID = results[results.length - 1].Id
   const firstIndex = data.findIndex(
-    (item) => item.BrandName.toLowerCase() === brand
+    (item) => item.Id === lastID
   );
 
   const nextFive = data.slice(
@@ -80,6 +82,14 @@ export default async function Page({
           <MedicineArticle key={item.Id} medicine={item} />
         ))}
       </section>
+      <section>
+        <h2>
+        Alternateves Brand of {brand} are available in the list below.
+        </h2>
+        <Link href={`/alternative/${encodeURIComponent(brand)}`} className="mt-4">
+          Alternative brand of {brand}
+        </Link>  
+      </section>
 
       {nextFive.length > 0 && (
         <section className="mt-10 border-t pt-6">
@@ -93,9 +103,9 @@ export default async function Page({
                 href={`/brandname/${encodeURIComponent(item.BrandName)}`}
                 className="border rounded-lg p-4 shadow-sm text-left"
               >
-                <p className="font-medium text-gray-900">{item.BrandName}</p>
-                <p className="text-sm text-gray-600">{item.CompanyName}</p>
-                <p className="text-sm text-gray-700 mt-1">
+                <p className="font-medium text-gray-900 dark:text-gray-300">{item.BrandName}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{item.CompanyName}</p>
+                <p className="text-sm text-gray-700 dark:text-gray-400 mt-1">
                   MRP: Rs. {item.MRP}
                 </p>
               </a>

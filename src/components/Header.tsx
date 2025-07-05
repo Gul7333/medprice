@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-bold text-blue-600">
-          <Link href="/">MedPrice</Link>
+        <div className="text-2xl font-bold text-blue-600 dark:bg-blue-400">
+          <Link href="/">PakMedPrice</Link>
         </div>
 
         {/* Hamburger Menu (checkbox-based toggle) */}

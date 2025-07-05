@@ -42,9 +42,9 @@ export default function BrandnameRootPage() {
 
 export const metadata: Metadata = {
   title:
-    "Alternative Brands | Find alternative brand of Medicines made in pakistan | ${SITE_NAME}",
+    `Alternative Brands | Find alternative brand of Medicines made in pakistan | ${SITE_NAME}`,
   description:
-    "Here is Complete List of medicines made in pakistan | Find alternatives of Medicines made in pakistan | ${SITE_NAME}",
+    `Here is Complete List of medicines made in pakistan | Find alternatives of Medicines made in pakistan | ${SITE_NAME}`,
   alternates: {
     canonical: `${BASE_URL}/alternative`,
   },
