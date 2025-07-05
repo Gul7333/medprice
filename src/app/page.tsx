@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main className="max-w-3xl mx-auto p-4 text-center" role="main">
-      <h1 className="text-4xl font-bold mb-6">Welcome to MedPrice.pk</h1>
-      <p className="text-gray-700 mb-6 text-lg">Medprice.pk is hub for finding latest price and information of medicine in pakistan</p>
+      <h1 className="text-4xl font-bold mb-6">Welcome to PakMedPrice</h1>
+      <p className="text-gray-700 mb-6 text-lg">PakMedprice is hub for finding latest price and information of medicine in pakistan</p>
       <p className="text-gray-700 mb-6 text-lg">
         Find accurate and updated prices of medicines available in Pakistan.
         Browse by <strong>brand name</strong> or <strong>company</strong> and explore detailed information about each product.
