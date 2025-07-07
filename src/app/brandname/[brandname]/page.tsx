@@ -15,7 +15,7 @@ type Props = {
 export async function generateStaticParams() {
   const uniqueBrands = [...new Set(data.map((item) => item.BrandName))];
   return uniqueBrands.map((brand) => ({
-    brandname: encodeURIComponent(brand),
+    brandname: brand,
   }));
 }
 // Optional: to support static generation
@@ -47,15 +47,10 @@ type Medicine = {
 export default async function Page({
   params,
 }: Props) {
-  const brand = decodeURIComponent((await params).brandname).toLowerCase().trim();
-  console.log("Brand:", brand);
-const test = "Tylol%20Suspension%20120mg%2F5ml"
-console.log("Decoded Brand:", decodeURIComponent(test))
-console.log("lenght:", decodeURIComponent(test).length)
-const founded = data.find((item)=> item.BrandName === decodeURIComponent(test))
-console.log("Founded Item:", founded)
+  const brand = decodeURIComponent((await params).brandname).toLowerCase()
+ 
   const results: Medicine[] = data.filter(
-    (item: Medicine) => item.BrandName.toLowerCase().trim() === brand
+    (item: Medicine) => item.BrandName.toLowerCase() === brand
   );
 
   if (results.length === 0) return notFound();
