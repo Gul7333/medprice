@@ -11,9 +11,11 @@ type Props = {
     brandname: string;
   }>;
 };
-export function generateStaticParams() {
-  return data.map((item) => ({
-    brandname: item.BrandName,
+// Optional: to support static generation
+export async function generateStaticParams() {
+  const uniqueBrands = [...new Set(data.map((item) => item.BrandName))];
+  return uniqueBrands.map((brand) => ({
+    brandname: encodeURIComponent(brand),
   }));
 }
 // Optional: to support static generation
@@ -46,7 +48,12 @@ export default async function Page({
   params,
 }: Props) {
   const brand = decodeURIComponent((await params).brandname).toLowerCase().trim();
-
+  console.log("Brand:", brand);
+const test = "Tylol%20Suspension%20120mg%2F5ml"
+console.log("Decoded Brand:", decodeURIComponent(test))
+console.log("lenght:", decodeURIComponent(test).length)
+const founded = data.find((item)=> item.BrandName === decodeURIComponent(test))
+console.log("Founded Item:", founded)
   const results: Medicine[] = data.filter(
     (item: Medicine) => item.BrandName.toLowerCase().trim() === brand
   );

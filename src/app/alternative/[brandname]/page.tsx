@@ -28,7 +28,7 @@ type Props = {
 export async function generateStaticParams() {
   const uniqueBrands = [...new Set(data.map((item) => item.BrandName))];
   return uniqueBrands.map((brand) => ({
-    brandname: brand,
+    brandname: encodeURIComponent(brand),
   }));
 }
 // Optional: to support static generation
