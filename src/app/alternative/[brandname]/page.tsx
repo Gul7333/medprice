@@ -28,7 +28,7 @@ type Props = {
 export async function generateStaticParams() {
   const uniqueBrands = [...new Set(data.map((item) => item.BrandName))];
   return uniqueBrands.map((brand) => ({
-    brandname: encodeURIComponent(brand),
+    brandname: brand,
   }));
 }
 // Optional: to support static generation
@@ -51,7 +51,7 @@ export default async function AlternativePage({ params }: Props) {
   const decodedBrand = decodeURIComponent((await params).brandname);
 
   const currentMedicine = data.find(
-    (item) => item.BrandName.toLowerCase().trim() === decodedBrand.toLowerCase().trim()
+    (item) => item.BrandName.toLowerCase() === decodedBrand.toLowerCase()
   );
 
   if (!currentMedicine) return notFound();
