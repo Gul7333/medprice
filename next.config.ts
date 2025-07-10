@@ -5,16 +5,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true
   },
-  rewrites: async ():Promise<Rewrite[]>=>[
-   
-    {
-      source: '/google8c405f60274f7059.html',
-      destination: '/public/google8c405f60274f7059.html'
-    }
-   
-
-  ]
-  ,
+ 
     
 
   

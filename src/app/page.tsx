@@ -1,7 +1,11 @@
+import { Metadata } from "next";
 import Link from "next/link";
 
+  // verification: "kMzMDsVDRn9nZbnZp3K_Rxk245cMdJhp4YiSXBa6nvg",
 
-
+export const metadata: Metadata = {
+  verification: "kMzMDsVDRn9nZbnZp3K_Rxk245cMdJhp4YiSXBa6nvg",
+}
 export default function HomePage() {
   return (
     <main className="max-w-3xl mx-auto p-4 text-center" role="main">
