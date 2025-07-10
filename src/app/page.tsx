@@ -1,10 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
-  // verification: "kMzMDsVDRn9nZbnZp3K_Rxk245cMdJhp4YiSXBa6nvg",
 
 export const metadata: Metadata = {
-  verification: "kMzMDsVDRn9nZbnZp3K_Rxk245cMdJhp4YiSXBa6nvg",
+  verification: {
+    
+    google: "kMzMDsVDRn9nZbnZp3K_Rxk245cMdJhp4YiSXBa6nvg"},
 }
 export default function HomePage() {
   return (
