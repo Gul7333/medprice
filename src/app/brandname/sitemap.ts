@@ -3,10 +3,10 @@ import type { MetadataRoute } from 'next';
 
 const drugs: Medicine[] = require("@/db/result.json")
 
-// // Generate sitemap IDs based on total items divided into 30,000 chunks
+// Generate sitemap IDs based on total items divided into 30,000 chunks
 // export async function generateSitemaps() {
 //   const totalItems = drugs.length;
-//   // const totalSitemaps = Math.ceil(totalItems / 30000);
+//   const totalSitemaps = Math.ceil(totalItems / 30000);
 
 //   return Array.from({ length: totalSitemaps }, (_, idx) => ({
 //     id: idx.toString(),
