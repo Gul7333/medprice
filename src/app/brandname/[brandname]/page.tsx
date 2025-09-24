@@ -3,6 +3,7 @@ import MedicineArticle from "@/components/MedicineArticle";
 import { Metadata } from "next";
 import { BASE_URL, SITE_NAME } from "@/constant/constant";
 import Link from "next/link";
+import CommentForm from "@/components/comments";
 const data: Medicine[] = require("@/db/result.json");
 
 type Props = {
@@ -14,7 +15,7 @@ type Props = {
 export async function generateStaticParams() {
   const uniqueBrands = [...new Set(data.map((item) => item.BrandName))];
   return uniqueBrands.map((brand) => ({
-    brandname: brand,
+    brandname: encodeURIComponent(brand),
   }));
 }
 // Optional: to support static generation
@@ -122,6 +123,10 @@ export default async function Page({ params }: Props) {
           </div>
         </section>
       )}
+      <section className="mt-10 border-t pt-6">
+
+        <CommentForm />
+      </section>
     </main>
   );
 }

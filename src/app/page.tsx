@@ -1,3 +1,4 @@
+import Features from "@/components/features";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -37,6 +38,7 @@ export default function HomePage() {
           Learn more about PakMedPrice
         </Link>
       </div>
+      <Features/>
 
       <section className="mt-10 text-left">
         <h2 className="text-2xl font-semibold mb-4">Medicine Price Lookup Made Easy</h2>
